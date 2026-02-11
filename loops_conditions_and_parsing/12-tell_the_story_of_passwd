@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-# This script extracts user info from /etc/passwd
-while IFS=: read -r user _ uid _ _ home _; do
-  echo "$user:$uid:$home"
-done < /etc/passwd
