@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script parses an Apache log file and displays the IP and HTTP status code
+while read -r line
+do
+    ip=$(echo "$line" | cut -d' ' -f1)
+    status=$(echo "$line" | cut -d' ' -f9)
+    echo "$ip $status"
+done < apache-access.log
